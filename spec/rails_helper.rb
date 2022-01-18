@@ -193,6 +193,8 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = true
 
+  config.raise_errors_for_deprecations!
+
   config.before(:suite) do
     CachedCounting.disable
 
@@ -484,7 +486,7 @@ end
 
 def decrypt_auth_cookie(cookie)
   request = ActionDispatch::Request.new(create_request_env.merge("HTTP_COOKIE" => "_t=#{cookie}"))
-  request.cookie_jar.encrypted["_t"]
+  request.cookie_jar.encrypted["_t"].with_indifferent_access
 end
 
 class SpecSecureRandom
