@@ -21,7 +21,7 @@ require 'action_mailer/railtie'
 require 'sprockets/railtie'
 
 # Plugin related stuff
-require_relative '../lib/plugin_initialization_guard'
+require_relative '../lib/plugin'
 require_relative '../lib/discourse_event'
 require_relative '../lib/discourse_plugin_registry'
 
@@ -138,7 +138,6 @@ module Discourse
                                   "lib/freedom_patches",
                                   "lib/tasks",
                                   "lib/generators",
-                                  "lib/plugin_initialization_guard.rb",
                                   "lib/unicorn_logstash_patch.rb",
                                   "lib/custom_setting_providers.rb",
                                   "lib/onebox/sanitize_config.rb"
@@ -246,7 +245,7 @@ module Discourse
     if Rails.env.test? && GlobalSetting.load_plugins?
       Discourse.activate_plugins!
     elsif GlobalSetting.load_plugins?
-      plugin_initialization_guard do
+      Plugin.initialization_guard do
         Discourse.activate_plugins!
       end
     end
@@ -260,7 +259,7 @@ module Discourse
 
     config.after_initialize do
       # Load plugins
-      plugin_initialization_guard do
+      Plugin.initialization_guard do
         Discourse.plugins.each(&:notify_after_initialize)
       end
 
