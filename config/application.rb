@@ -31,7 +31,13 @@ require_relative '../lib/plugin_gem'
 require_relative '../app/models/global_setting'
 GlobalSetting.configure!
 if GlobalSetting.load_plugins?
-  require_relative '../lib/custom_setting_providers'
+  # Support for plugins to register custom setting providers. They can do this
+  # by having a file, `register_provider.rb` in their root that will be run
+  # at this point.
+
+  Dir.glob(File.join(File.dirname(__FILE__), '../plugins', '*', "register_provider.rb")) do |p|
+    require p
+  end
 end
 GlobalSetting.load_defaults
 if GlobalSetting.try(:cdn_url).present? && GlobalSetting.cdn_url !~ /^https?:\/\//
@@ -139,7 +145,6 @@ module Discourse
                                   "lib/tasks",
                                   "lib/generators",
                                   "lib/unicorn_logstash_patch.rb",
-                                  "lib/custom_setting_providers.rb",
                                   "lib/onebox/sanitize_config.rb"
                                  )
 
