@@ -2,8 +2,6 @@
 
 # Be sure to restart your server when you modify this file.
 
-require 'discourse_cookie_store'
-
 Rails.application.config.session_store(
   :discourse_cookie_store,
   key: '_forum_session',

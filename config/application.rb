@@ -138,7 +138,6 @@ module Discourse
                                   "lib/freedom_patches",
                                   "lib/tasks",
                                   "lib/generators",
-                                  "lib/discourse_cookie_store.rb",
                                   "lib/plugin_initialization_guard.rb",
                                   "lib/unicorn_logstash_patch.rb",
                                   "lib/custom_setting_providers.rb",
