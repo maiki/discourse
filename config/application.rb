@@ -144,8 +144,7 @@ module Discourse
                                   "lib/freedom_patches",
                                   "lib/tasks",
                                   "lib/generators",
-                                  "lib/unicorn_logstash_patch.rb",
-                                  "lib/onebox/sanitize_config.rb"
+                                  "lib/unicorn_logstash_patch.rb"
                                  )
 
     config.eager_load_paths << "#{root}/lib"
