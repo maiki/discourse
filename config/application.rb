@@ -133,7 +133,6 @@ module Discourse
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths << "#{root}/lib"
-    config.autoload_paths << "#{root}/lib/i18n"
     config.autoload_paths << "#{root}/lib/validators"
 
     Rails.autoloaders.main.ignore("app/models/reports",
