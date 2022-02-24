@@ -135,7 +135,6 @@ module Discourse
     config.autoload_paths << "#{root}/lib"
     config.autoload_paths << "#{root}/lib/i18n"
     config.autoload_paths << "#{root}/lib/validators"
-    config.autoload_paths << "#{root}/lib/svg_sprite"
 
     Rails.autoloaders.main.ignore("app/models/reports",
                                   "lib/freedom_patches",
@@ -146,7 +145,6 @@ module Discourse
 
     config.eager_load_paths << "#{root}/lib"
     config.eager_load_paths << "#{root}/lib/validators"
-    config.eager_load_paths << "#{root}/lib/svg_sprite"
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -253,7 +251,7 @@ module Discourse
     Discourse::Utils.atomic_ln_s(DiscourseFonts.path_for_fonts, fonts_path)
 
     require 'stylesheet/manager'
-    require 'svg_sprite/svg_sprite'
+    require 'svg_sprite'
 
     config.after_initialize do
       # Load plugins
