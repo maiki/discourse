@@ -91,7 +91,7 @@ module Discourse
     require 'js_locale_helper'
 
     # tiny file needed by site settings
-    require 'highlight_js/highlight_js'
+    require 'highlight_js'
 
     # we skip it cause we configure it in the initializer
     # the railtie for message_bus would insert it in the
@@ -133,7 +133,6 @@ module Discourse
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths << "#{root}/lib"
-    config.autoload_paths << "#{root}/lib/highlight_js"
     config.autoload_paths << "#{root}/lib/i18n"
     config.autoload_paths << "#{root}/lib/validators"
     config.autoload_paths << "#{root}/lib/svg_sprite"
@@ -146,7 +145,6 @@ module Discourse
                                  )
 
     config.eager_load_paths << "#{root}/lib"
-    config.eager_load_paths << "#{root}/lib/highlight_js"
     config.eager_load_paths << "#{root}/lib/validators"
     config.eager_load_paths << "#{root}/lib/svg_sprite"
 
