@@ -138,7 +138,6 @@ module Discourse
     config.autoload_paths << "#{root}/lib/i18n"
     config.autoload_paths << "#{root}/lib/validators"
     config.autoload_paths << "#{root}/lib/svg_sprite"
-    config.autoload_paths << "#{root}/lib/guardian"
 
     Rails.autoloaders.main.ignore("app/models/reports",
                                   "lib/freedom_patches",
@@ -152,7 +151,6 @@ module Discourse
     config.eager_load_paths << "#{root}/lib/highlight_js"
     config.eager_load_paths << "#{root}/lib/validators"
     config.eager_load_paths << "#{root}/lib/svg_sprite"
-    config.eager_load_paths << "#{root}/lib/guardian"
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
