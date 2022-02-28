@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'onpdiff'
 
 describe ONPDiff do
 

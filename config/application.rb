@@ -113,18 +113,12 @@ module Discourse
       autoloader.inflector = DiscourseInflector.new
       autoloader.inflector.inflect(
         'ip_addr' => 'IPAddr',
-        'onpdiff' => 'ONPDiff',
         'onceoff' => 'Jobs',
-        'pop3_polling_enabled_setting_validator' => 'POP3PollingEnabledSettingValidator',
         'regular' => 'Jobs',
         'scheduled' => 'Jobs',
-        'version' => 'Discourse',
-        'csrf_token_verifier' => 'CSRFTokenVerifier',
-        'html' => 'HTML',
         'google_oauth2_authenticator' => 'GoogleOAuth2Authenticator',
         'oauth2_authenticator' => 'OAuth2Authenticator',
         'omniauth_strategies' => 'OmniAuthStrategies',
-        'json' => 'JSON',
       )
     end
 
