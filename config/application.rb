@@ -112,7 +112,6 @@ module Discourse
     Rails.autoloaders.each do |autoloader|
       autoloader.inflector = DiscourseInflector.new
       autoloader.inflector.inflect(
-        'canonical_url' => 'CanonicalURL',
         'clean_up_unmatched_ips' => 'CleanUpUnmatchedIPs',
         'homepage_constraint' => 'HomePageConstraint',
         'ip_addr' => 'IPAddr',
