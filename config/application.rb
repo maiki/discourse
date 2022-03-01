@@ -121,8 +121,7 @@ module Discourse
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths << "#{root}/lib"
 
-    Rails.autoloaders.main.ignore("app/models/reports",
-                                  "lib/freedom_patches",
+    Rails.autoloaders.main.ignore("lib/freedom_patches",
                                   "lib/tasks",
                                   "lib/generators",
                                   "lib/unicorn_logstash_patch.rb"
