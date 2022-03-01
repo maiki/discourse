@@ -112,7 +112,6 @@ module Discourse
     Rails.autoloaders.each do |autoloader|
       autoloader.inflector = DiscourseInflector.new
       autoloader.inflector.inflect(
-        'ip_addr' => 'IPAddr',
         'onceoff' => 'Jobs',
         'regular' => 'Jobs',
         'scheduled' => 'Jobs'
@@ -121,7 +120,6 @@ module Discourse
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths << "#{root}/lib"
-    config.autoload_paths << "#{root}/lib/validators"
 
     Rails.autoloaders.main.ignore("app/models/reports",
                                   "lib/freedom_patches",
@@ -131,7 +129,6 @@ module Discourse
                                  )
 
     config.eager_load_paths << "#{root}/lib"
-    config.eager_load_paths << "#{root}/lib/validators"
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
