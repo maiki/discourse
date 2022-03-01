@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'validators/category_search_priority_weights_validator'
 
 RSpec.describe CategorySearchPriorityWeightsValidator do
   it "should validate the results correctly" do
