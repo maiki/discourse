@@ -115,10 +115,7 @@ module Discourse
         'ip_addr' => 'IPAddr',
         'onceoff' => 'Jobs',
         'regular' => 'Jobs',
-        'scheduled' => 'Jobs',
-        'google_oauth2_authenticator' => 'GoogleOAuth2Authenticator',
-        'oauth2_authenticator' => 'OAuth2Authenticator',
-        'omniauth_strategies' => 'OmniAuthStrategies',
+        'scheduled' => 'Jobs'
       )
     end
 
