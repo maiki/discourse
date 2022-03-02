@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 def extract_locale(path)
   path[/\.([^.]{2,})\.yml$/, 1]
 end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 RSpec.describe CategorySearchPriorityWeightsValidator do
   it "should validate the results correctly" do
     [1, 1.1].each do |value|

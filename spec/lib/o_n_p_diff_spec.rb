@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 describe ONPDiff do
 
   describe "diff" do

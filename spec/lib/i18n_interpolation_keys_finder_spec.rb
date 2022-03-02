@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 RSpec.describe I18nInterpolationKeysFinder do
   describe '#find' do
     it 'should return the right keys' do

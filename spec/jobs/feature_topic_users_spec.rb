@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 describe Jobs::FeatureTopicUsers do
   it "raises an error without a topic_id" do
     expect { Jobs::FeatureTopicUsers.new.execute({}) }.to raise_error(Discourse::InvalidParameters)

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 describe Guardian do
 
   fab!(:user) { Fabricate(:user) }

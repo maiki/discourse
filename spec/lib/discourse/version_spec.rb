@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 describe Discourse::Version do
   context "has_needed_version?" do
     it "works for major comparisons" do
