@@ -6,14 +6,8 @@ class ActiveRecord::Relation
   end
 
   def pluck_first!(*attributes)
-    items = limit(1).pluck(*attributes)
-
-    raise_record_not_found_exception! if items.empty?
-
-    items.first
+    pluck_first.presence || raise_record_not_found_exception
   end
 end
 
-module ActiveRecord::Querying
-  delegate(:pluck_first, :pluck_first!, to: :all)
-end
+ActiveRecord::Querying.delegate(:pluck_first, :pluck_first!, to: :all)
