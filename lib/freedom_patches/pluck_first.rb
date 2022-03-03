@@ -6,7 +6,7 @@ class ActiveRecord::Relation
   end
 
   def pluck_first!(*attributes)
-    pluck_first.presence || raise_record_not_found_exception
+    pluck_first.presence || raise_record_not_found_exception!
   end
 end
 
