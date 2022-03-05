@@ -30,6 +30,34 @@
           }}
         {{/if}}
       </div>
+
+      <div class="alt-actions">
+        {{#if post}}
+          <span class="date">{{displayDate}}</span>
+        {{/if}}
+
+        {{#if topic.details.can_reply_as_new_topic}}
+          {{#if topic.isPrivateMessage}}
+            {{d-button
+              action=(action "replyAsNewTopic")
+              class="btn-default new-topic"
+              icon="plus"
+              aria-label="post.reply_as_new_private_message"
+              title="post.reply_as_new_private_message"
+              label="user.new_private_message"
+            }}
+          {{else}}
+            {{d-button
+              action=(action "replyAsNewTopic")
+              class="btn-default new-topic"
+              icon="plus"
+              aria-label="post.reply_as_new_topic"
+              title="post.reply_as_new_topic"
+              label="topic.create"
+            }}
+          {{/if}}
+        {{/if}}
+      </div>
     </div>
   </form>
 {{/d-modal-body}}
