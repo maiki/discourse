@@ -123,8 +123,7 @@ module Discourse
 
     Rails.autoloaders.main.ignore("lib/freedom_patches",
                                   "lib/tasks",
-                                  "lib/generators",
-                                  "lib/unicorn_logstash_patch.rb"
+                                  "lib/generators"
                                  )
 
     config.eager_load_paths << "#{root}/lib"
